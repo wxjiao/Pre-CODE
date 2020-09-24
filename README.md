@@ -63,7 +63,7 @@ Decompress the file and re-name it `glove300.txt`.
 ```ruby
 bash exec_src.sh
 ```
-You can change the parameters in the script.
+   You can change the parameters in the script.
 ```ruby
 #!bin/bash
 # Var assignment
@@ -92,7 +92,7 @@ done
 ```ruby
 bash exec_emo.sh
 ```
-You can change the parameters in the script.
+   You can change the parameters in the script.
 ```ruby
 #!bin/bash
 # Var assignment
