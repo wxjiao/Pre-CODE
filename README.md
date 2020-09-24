@@ -25,8 +25,6 @@ Figure 2 shows an example, where the utterance u<sub>4</sub> is masked out from 
 
 ## Code Base
 
-[Preprocessed](https://drive.google.com/drive/folders/1wiafGIdBdV2F9bUjdwZdAUJ3V3iIcmg7?usp=sharing)
-
 
 ### 1. Dataset
 Please find the datasets via the following links:
@@ -49,8 +47,10 @@ Preprocess one of the emotion dataset as:
 ```ruby
 python Preprocess.py -datatype emo -emoset Friends -min_count 2 -max_seq_len 60
 ```
-The arguments `-emoset`, `-min_count`, and `-max_length` represent the dataset name, the minimum frequency of words when building
-the vocabulary, and the max_length for padding or truncating sentences.
+The arguments `-datatype`, `-emoset`, `-min_count`, and `-max_length` represent the type of data (i.e., pre-training data or emotion data), the dataset name, the minimum frequency of words when building the vocabulary, and the max_length for padding or truncating sentences.
+
+[PreCODE storage](https://drive.google.com/drive/folders/1wiafGIdBdV2F9bUjdwZdAUJ3V3iIcmg7?usp=sharing) 
+includes the raw data and preprocessed data of OpSub and Friends, and the pre-trained models with hidden sizes of 300.
 
 ### Pre-trained Word Embeddings
 To reproduce the results reported in the paper, please adopt the pre-trained word embeddings for initialization. You can download the 300-dimentional embeddings from below:
