@@ -59,11 +59,11 @@ To reproduce the results reported in the paper, please adopt the pre-trained wor
 Decompress the file and re-name it `glove300.txt`.
 
 ### Train
-- Pre-train the context-dependent encoder on the ConvCom task.
+1. Pre-train the context-dependent encoder on the ConvCom task.
 ```ruby
 bash exec_src.sh
 ```
-  - You can change the parameters in the script.
+   - You can change the parameters in the script.
 ```ruby
 #!bin/bash
 # Var assignment
@@ -88,7 +88,7 @@ python LMMain.py \
 done
 ```
 
-- Fine-tune the Pre-CODE on the emotion datasets.
+2 Fine-tune the Pre-CODE on the emotion datasets.
 ```ruby
 bash exec_emo.sh
 ```
