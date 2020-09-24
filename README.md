@@ -11,3 +11,8 @@ Emotion Recognition in Conversations (ERC) aims to predict the emotion state of 
     <img src="/image/PreCODE.png" width="80%" title="Framework of Pre-CODE."</img>
     <p class="image-caption">Figure 1: The framework of Pre-CODE.</p>
 </div>
+
+<div align="center">
+    <img src="/image/ConvCom.png" width="80%" title="An Example of the ConvCom Task."</img>
+    <p class="image-caption">Figure 1: An Example of the ConvCom Task.</p>
+</div>
