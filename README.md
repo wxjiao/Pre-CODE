@@ -26,3 +26,37 @@ Figure 2 shows an example, where the utterance u<sub>4</sub> is masked out from 
 ## Code Base
 
 [Preprocessed](https://drive.google.com/drive/folders/1wiafGIdBdV2F9bUjdwZdAUJ3V3iIcmg7?usp=sharing)
+
+
+### 1. Dataset
+Please find the datasets via the following links:
+  - [Friends](http://doraemon.iis.sinica.edu.tw/emotionlines): **Friends** comes from the transcripts of Friends TV Sitcom, where each dialogue in the dataset consists of a scene of multiple speakers.
+  - [EmotionPush](http://doraemon.iis.sinica.edu.tw/emotionlines): **EmotionPush** comes from private conversations between friends on the Facebook messenger collected by an App called EmotionPush.
+  - [IEMOCAP](https://sail.usc.edu/iemocap/): **IEMOCAP** contains approximately 12 hours of audiovisual data, including video, speech, motion capture of face, text transcriptions.
+  
+### Prerequisites
+- Python v3.6
+- Pytorch v0.4.0-v0.4.1
+- Pickle
+
+### Data Preprocessing
+Preprocess the OpenSubtitle dataset as:
+```
+```
+
+Preprocess one of the emotion dataset as:
+```ruby
+python Preprocess.py -emoset Friends -min_count 2 -max_seq_len 60
+```
+The arguments `-emoset`, `-min_count`, and `-max_length` represent the dataset name, the minimum frequency of words when building
+the vocabulary, and the max_length for padding or truncating sentences.
+
+### Pre-trained Word Embeddings
+To reproduce the results reported in the paper, please adopt the pre-trained word embeddings for initialization. You can download the 300-dimentional embeddings from below:
+- GloVe: [glove.840B.300d.zip](https://nlp.stanford.edu/projects/glove/)
+
+Decompress the file and re-name it `glove300.txt`.
+
+### Train
+To be continued ...
+
