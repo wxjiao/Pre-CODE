@@ -88,7 +88,7 @@ python LMMain.py \
 done
 ```
 
-2 Fine-tune the Pre-CODE on the emotion datasets.
+2. Fine-tune the Pre-CODE on the emotion datasets.
 ```ruby
 bash exec_emo.sh
 ```
