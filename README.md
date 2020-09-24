@@ -41,12 +41,13 @@ Please find the datasets via the following links:
 
 ### Data Preprocessing
 Preprocess the OpenSubtitle dataset as:
-```
+```ruby
+python Preprocess.py -datatype opsub -min_count 2 -max_seq_len 60
 ```
 
 Preprocess one of the emotion dataset as:
 ```ruby
-python Preprocess.py -emoset Friends -min_count 2 -max_seq_len 60
+python Preprocess.py -datatype emo -emoset Friends -min_count 2 -max_seq_len 60
 ```
 The arguments `-emoset`, `-min_count`, and `-max_length` represent the dataset name, the minimum frequency of words when building
 the vocabulary, and the max_length for padding or truncating sentences.
