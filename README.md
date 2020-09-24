@@ -26,7 +26,7 @@ Figure 2 shows an example, where the utterance u<sub>4</sub> is masked out from 
 ## Code Base
 
 
-### 1. Dataset
+### Dataset
 Please find the datasets via the following links:
   - [Friends](http://doraemon.iis.sinica.edu.tw/emotionlines): **Friends** comes from the transcripts of Friends TV Sitcom, where each dialogue in the dataset consists of a scene of multiple speakers.
   - [EmotionPush](http://doraemon.iis.sinica.edu.tw/emotionlines): **EmotionPush** comes from private conversations between friends on the Facebook messenger collected by an App called EmotionPush.
@@ -59,5 +59,61 @@ To reproduce the results reported in the paper, please adopt the pre-trained wor
 Decompress the file and re-name it `glove300.txt`.
 
 ### Train
-To be continued ...
+1. Pre-train the context-dependent encoder on the ConvCom task.
+```ruby
+bash exec_src.sh
+```
+You can change the parameters in the script.
+```ruby
+#!bin/bash
+# Var assignment
+LR=2e-4
+GPU=3
+echo ========= lr=$LR ==============
+for iter in 1
+do
+echo --- $Enc - $Dec $iter ---
+python LMMain.py \
+-lr $LR \
+-gpu $GPU \
+-d_hidden_low 300 \
+-d_hidden_up 300 \
+-sentEnc gru2 \
+-layers 1 \
+-patience 3 \
+-data_path OpSub_data.pt \
+-vocab_path glob_vocab.pt \
+-embedding embedding.pt \
+-dataset OpSub
+done
+```
+
+2. Fine-tune the Pre-CODE on the emotion datasets.
+```ruby
+bash exec_emo.sh
+```
+You can change the parameters in the script.
+```ruby
+#!bin/bash
+# Var assignment
+LR=1e-4
+GPU=1
+du=300
+dc=300
+echo ========= lr=$LR ==============
+for iter in 1 2 3 4 5
+do
+echo --- $Enc - $Dec $iter ---
+python EmoMain.py -load_model \
+-lr $LR -gpu $GPU \
+-d_hidden_low $du -d_hidden_up $dc \
+-patience 6 -report_loss 720 \
+-data_path Friends_data.pt \
+-vocab_path glob_vocab.pt \
+-emodict_path Friends_emodict.pt \
+-tr_emodict_path Friends_tr_emodict.pt \
+-dataset Friends \
+-embedding embedding.pt
+done
+```
 
