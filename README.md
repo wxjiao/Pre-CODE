@@ -13,7 +13,7 @@ Emotion Recognition in Conversations (ERC) aims to predict the emotion state of 
 
 
 **Conversation Completion (ConvCom)** We exploit the self-supervision signal in conversations to construct our pre-training task.
-Formally, given a conversation, U={ u<sub>1</sub>, u<sub>2</sub>, ..., u<sub>L</sub> }, we mask a target utterance u<sub>l</sub> as U}\u<sub></sub>={ ..., u<sub>l-1</sub>, [mask] , u<sub>l+1</sub>, ... } to create a question, and try to retrieve the correct utterance u<sub>l</sub> from the whole training corpus. Since the choice of filling the mask involves all possible utterances, which are countless, formulating the task into a multi-label classification task with softmax is infeasible. We instead simplify the task into a response selection task using negative sampling, which is a variant of noise-contrastive estimation (NCE).
+Formally, given a conversation, U={ u<sub>1</sub>, u<sub>2</sub>, ..., u<sub>L</sub> }, we mask a target utterance u<sub>l</sub> as U\u<sub></sub>={ ..., u<sub>l-1</sub>, [mask] , u<sub>l+1</sub>, ... } to create a question, and try to retrieve the correct utterance u<sub>l</sub> from the whole training corpus. Since the choice of filling the mask involves all possible utterances, which are countless, formulating the task into a multi-label classification task with softmax is infeasible. We instead simplify the task into a response selection task using negative sampling, which is a variant of noise-contrastive estimation (NCE).
 To achieve so, we sample N-1 noise utterances elsewhere, along with the target utterance, to form a set of N candidate answers. Then the goal is to select the correct answer, i.e., u<sub>l</sub>, from the candidate answers to fill the mask, conditioned on the context utterances. We term this task "Conversation Completion", abbreviated as ConvCom. 
 Figure 2 shows an example, where the utterance u<sub>4</sub> is masked out from the original conversation and _two_ noise utterances are sampled elsewhere together with u<sub>4</sub> to form the candidate answers. 
 
@@ -21,3 +21,8 @@ Figure 2 shows an example, where the utterance u<sub>4</sub> is masked out from 
     <img src="/image/ConvCom.png" width="60%" title="An Example of the ConvCom Task."</img>
     <p class="image-caption">Figure 2: An Example of the ConvCom Task.</p>
 </div>
+
+
+## Code Base
+
+[Preprocessed](https://drive.google.com/drive/folders/1wiafGIdBdV2F9bUjdwZdAUJ3V3iIcmg7?usp=sharing)
