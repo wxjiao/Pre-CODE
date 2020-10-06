@@ -1,6 +1,6 @@
 # Pre-CODE: Exploiting Unsupervised Data for Emotion Recognition in Conversations
 
-Implementation of our paper "Exploiting Unsupervised Data for Emotion Recognition in Conversations" to appear in the Findings of EMNLP 2020.
+Implementation of our paper "Exploiting Unsupervised Data for Emotion Recognition in Conversations" to appear in the Findings of EMNLP 2020. [[paper]](https://arxiv.org/abs/2010.01908) [[older version]](https://arxiv.org/abs/1910.08916)
 
 
 ## Brief Introduction
