@@ -118,3 +118,19 @@ python EmoMain.py -load_model \
 done
 ```
 
+## Public Impact
+
+### Citation
+Please kindly cite our paper if you find it useful or highly related to your research:
+
+```ruby
+@misc{jiao2020exploiting,
+      title={Exploiting Unsupervised Data for Emotion Recognition in Conversations}, 
+      author={Wenxiang Jiao and Michael R. Lyu and Irwin King},
+      year={2020},
+      eprint={2010.01908},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
+
